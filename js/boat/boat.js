@@ -1,12 +1,12 @@
-import { loader, scene } from "../init/init.js";
+import { loader, scene, renderer, camera } from "../init/init.js";
 export class Boat {
     constructor(){
         loader.load('../assets/boats/speed_boat_05/scene.gltf',
         function (gltf) {
           gltf.scene.position.set(0, 0.3, 0);
-          //scene.add(gltf.scene);
+          scene.scene.add(gltf.scene);
           console.log('in gltf');
-          //renderer.render(scene, camera)
+          renderer.renderer.render(scene.scene, camera.camera)
         },
         function (xhr) { console.log((xhr.loaded / xhr.total * 100) + '%loaded'); },
         function (error) { console.error('An error happened', error); });

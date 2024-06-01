@@ -4,7 +4,7 @@ import { Renderer } from '../render/render.js';
 import { Camera } from '../camera/camera.js';
 import { initWater } from '../water/water.js';
 import { Boat } from '../boat/boat.js';
-import { animate } from '../animate/animate.js';
+// import { animate } from '../animate/animate.js';
 import { initOrbitControls } from '../controls/controls.js';
 
 export let loader;
@@ -24,6 +24,7 @@ export function init() {
     //Renderer
     renderer = new Renderer();
     renderer.init();
+    console.log(renderer);
 
     //set up the camera
     camera = new Camera();
@@ -31,6 +32,7 @@ export function init() {
 
     //init the water
     water = initWater();
+    console.log(water);
 
     //init the boat
     boat = new Boat();
@@ -41,3 +43,4 @@ export function init() {
     //init the animation function
     //animate();
 }
+import { animate } from '../animate/animate.js';

@@ -9,7 +9,7 @@ export function initWater() {
     {
       textureWidth: 512,
       textureHeight: 512,
-      waterNormals: new THREE.TextureLoader().load('assets/waters/waternormals.jpg', function (texture) {
+      waterNormals: new THREE.TextureLoader().load('./waternormals.jpg', function (texture) {
 
         texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
 
@@ -18,11 +18,11 @@ export function initWater() {
       sunColor: 0xffffff,
       waterColor: 0x001e0f,
       distortionScale: 3.7,
-      fog: scene.fog !== undefined
+      fog: scene.scene.fog !== undefined
     }
   );
   water.rotation.x = - Math.PI / 2;
 
-  //scene.add(water);
+  scene.scene.add(water);
   return water;
 }
